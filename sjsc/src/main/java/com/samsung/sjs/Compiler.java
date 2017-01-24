@@ -636,6 +636,7 @@ public class Compiler extends ExternalRhinoVisitor
         PhysicalLayoutConstraintGathering plcg = new PhysicalLayoutConstraintGathering(opts, m, ffi);
         post_cc.accept(plcg);
         // TODO: Eventually feed this to the IRVTablePass as a source of layout information
+        plcg.dumpLayoutConstraints();
 
         // Decorate SJS IR with vtables.
         IRVTablePass irvt = new IRVTablePass(opts, m, ffi);
